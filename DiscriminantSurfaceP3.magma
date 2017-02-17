@@ -1,0 +1,10 @@
+DiscriminantSurfaceP3 := function(f)
+    P<x, y, z, w> := PolynomialRing(IntegerRing(), 4);
+    D := 1;
+    for j := 1 to 4 do
+        B := ideal<P | [ Derivative(P!f, i) : i in [1..4] ] cat [P.j - 1]>;
+        G := GroebnerBasis(B);
+        D := LCM(G[#G],D);
+    end for;
+    return D;
+end function;
