@@ -1,3 +1,6 @@
+// Copyright 2017 Edgar Costa
+// See LICENSE file for license details.
+
 DiscriminantSurfaceP3 := function(f)
     P<x, y, z, w> := PolynomialRing(IntegerRing(), 4);
     D := 1;
