@@ -42,7 +42,11 @@ def DirichletCoefficients(euler_factors, bound = None):
     while i <= bound:
         if A[i] is None:
             #i is a prime
-            euler_i = euler_factors[i][1:];
+            if i in euler_factors:
+                euler_i = euler_factors[i][1:];
+            else:
+                euler_i = [];
+                
             euler_i += [0] * (degree - len(euler_i)); # fill with zeros if necessary            
             # deal with its powers
             r = 1;
