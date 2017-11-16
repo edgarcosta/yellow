@@ -16,7 +16,6 @@ SOR := function(A, b, omega, phi0, epsilon, maxiterations)
         end for;
         err := Norm(b - phi * A);
         if err le epsilon then
-            print k;
             return phi;
         end if;
     print err;
